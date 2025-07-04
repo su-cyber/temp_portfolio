@@ -970,6 +970,153 @@
                font-size: 2.2rem;
            }
        }
+       /* Ethics Tool Section */
+        #ethics-tool {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%);
+        }
+
+        .tool-hero {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 50px;
+        }
+
+        .ethics-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .ethics-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .ethics-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .ethics-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .worksheet-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .worksheet-image {
+            background: linear-gradient(135deg, #00cec9, #00b894);
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .worksheet-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .dimension-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .dimension-card {
+            background: rgba(108, 92, 231, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .dimension-card:hover {
+            transform: translateY(-5px);
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        .dimension-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .rose-application {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 60px 0;
+        }
+
+        .gap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .gap-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 25px;
+            transition: var(--transition);
+        }
+
+        .gap-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .theoretical-foundation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .theory-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .benefits-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+        }
         </style>
 </head>
 <body>
@@ -2256,7 +2403,7 @@
                        <!-- Placeholder for image -->
                        <div class="gallery-item">
                            <div style="background: linear-gradient(45deg, #74b9ff, #0984e3); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                               <img src='assets/behaviour1.jpg' alt='light scenario'/>
+                               <img src='https://res.cloudinary.com/dpksxjru2/image/upload/v1751665739/behaviour1_feldba.jpg' alt='light scenario'/>
                            </div>
                        </div>
                    </div>
@@ -2291,7 +2438,7 @@
                    <!-- Placeholder for behavior tree image -->
                    <div class="gallery-item">
                        <div style="background: linear-gradient(45deg, #74b9ff, #0984e3); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                           <img src='assets/behaviour2.jpg' alt='light scenario'/>
+                           <img src='https://res.cloudinary.com/dpksxjru2/image/upload/v1751665747/behaviour2_ntvjeu.jpg' alt='light scenario'/>
                        </div>
                    </div>
                    <p class="diagram-caption">Our Behavior Tree framework enables modular prototyping of autonomy with resilient fallback pathways</p>
@@ -2392,7 +2539,7 @@
                <!-- Placeholder for scenario image -->
                <div class="gallery-item">
                    <div style="background: linear-gradient(45deg, #74b9ff, #0984e3); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                       <img src='assets/behaviour3.jpg' alt='light scenario'/>
+                       <img src='https://res.cloudinary.com/dpksxjru2/image/upload/v1751665743/behaviour3_enn4h1.jpg' alt='light scenario'/>
                    </div>
                </div>
 
@@ -2425,6 +2572,242 @@
            </div>
        </div>
    </section>
+
+   <!-- Ethics Design Tool Section -->
+    <section id="ethics-tool">
+        <div class="container">
+            <div class="tool-hero">
+                <h1>Ethics Design Tool</h1>
+                <p>Integrating Ethical Reflection Throughout the Design Process</p>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <div class="ethics-intro">
+                    <div class="ethics-card">
+                        <h3><i class="fas fa-user-secret"></i> The Anonymous Mini Ethics Worksheet</h3>
+                        <p>We developed this tool to integrate ethical concerns (bias, privacy, sustainability, responsibility) throughout the design process. This one-page worksheet serves as an adaptable ethical check-in from ideation to review.</p>
+
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><strong>Anonymity:</strong> Fosters honest dialogue without judgment</li>
+                            <li><strong>Adaptability:</strong> Relevant across stakeholders and projects</li>
+                            <li><strong>Critical Questions:</strong> Prompts deep reflection at each stage</li>
+                            <li><strong>Continuous Integration:</strong> Not a final checklist but an ongoing process</li>
+                        </ul>
+                    </div>
+
+                    <div class="ethics-card">
+                        <h3><i class="fas fa-question-circle"></i> Core Reflection Questions</h3>
+                        <p>The worksheet guides designers, developers, and stakeholders through critical ethical considerations:</p>
+
+                        <ul>
+                            <li><strong>Benefit/Harm Analysis:</strong> Who benefits? Who might be harmed?</li>
+                            <li><strong>Unintended Consequences:</strong> What are potential negative outcomes?</li>
+                            <li><strong>Value Prioritization:</strong> Which values are prioritized? Which are neglected?</li>
+                            <li><strong>Stakeholder Impact:</strong> How does this affect vulnerable populations?</li>
+                            <li><strong>Long-term Effects:</strong> What are the societal implications over time?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="worksheet-container">
+                    <div class="worksheet-image">
+                        <i class="fas fa-file-contract" style="font-size: 6rem; opacity: 0.8;"></i>
+                        <div style="position: absolute; text-align: center;">
+                            <p>Anonymous Mini Ethics Worksheet</p>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Visual representation of the ethics tool</p>
+                        </div>
+                    </div>
+
+                    <div class="worksheet-content">
+                        <h3>Worksheet Structure</h3>
+                        <p>The one-page worksheet is organized into four quadrants that guide ethical reflection:</p>
+
+                        <div class="dimension-grid">
+                            <div class="dimension-card">
+                                <h4><i class="fas fa-users"></i> Stakeholders</h4>
+                                <ul>
+                                    <li>Who are we designing for?</li>
+                                    <li>Whose voices are missing?</li>
+                                    <li>How might vulnerable groups be affected?</li>
+                                </ul>
+                            </div>
+
+                            <div class="dimension-card">
+                                <h4><i class="fas fa-hourglass-half"></i> Time</h4>
+                                <ul>
+                                    <li>Immediate vs long-term consequences</li>
+                                    <li>Sustainability considerations</li>
+                                    <li>Intergenerational impacts</li>
+                                </ul>
+                            </div>
+
+                            <div class="dimension-card">
+                                <h4><i class="fas fa-balance-scale"></i> Values</h4>
+                                <ul>
+                                    <li>What values are prioritized?</li>
+                                    <li>What values might be neglected?</li>
+                                    <li>Are we reinforcing harmful biases?</li>
+                                </ul>
+                            </div>
+
+                            <div class="dimension-card">
+                                <h4><i class="fas fa-expand-arrows-alt"></i> Pervasiveness</h4>
+                                <ul>
+                                    <li>How might this technology spread?</li>
+                                    <li>What are the societal ripple effects?</li>
+                                    <li>Direct vs indirect impacts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <h3>Theoretical Inspiration</h3>
+
+                <div class="theoretical-foundation">
+                    <div class="theory-card">
+                        <h3><i class="fas fa-project-diagram"></i> Steven Dorrestijn's Product Impact Tool</h3>
+                        <p>Our work draws inspiration from Dorrestijn's framework which visualizes technology's societal ripple effects:</p>
+
+                        <ul>
+                            <li>Distinguishes between direct and indirect impacts</li>
+                            <li>Analyzes effects on users versus society</li>
+                            <li>Highlights unintended consequences</li>
+                            <li>Encourages consideration of long-term effects</li>
+                        </ul>
+
+                        <p>This framework transformed philosophical concepts into actionable design reflections.</p>
+                    </div>
+
+                    <div class="theory-card">
+                        <h3><i class="fas fa-cards"></i> Batya Friedman's Envisioning Cards</h3>
+                        <p>Friedman's approach structured our methodology across four key dimensions:</p>
+
+                        <ul>
+                            <li><strong>Stakeholders:</strong> Whose voices are missing?</li>
+                            <li><strong>Time:</strong> What are the long-term consequences?</li>
+                            <li><strong>Values:</strong> Are we reinforcing certain values while neglecting others?</li>
+                            <li><strong>Pervasiveness:</strong> How might this technology spread beyond its intended use?</li>
+                        </ul>
+
+                        <p>These questions became central to our ethical reflection process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <div class="rose-application">
+                    <h3>Application to ROSE: Elderly Care Robot</h3>
+                    <p>Applying the ethics worksheet to our ROSE robot exposed critical ethical gaps and considerations:</p>
+
+                    <div class="gap-grid">
+                        <div class="gap-card">
+                            <h4><i class="fas fa-user-injured"></i> Vulnerable Users</h4>
+                            <p>Special focus needed for elderly users with cognitive or physical limitations</p>
+                        </div>
+
+                        <div class="gap-card">
+                            <h4><i class="fas fa-comment-slash"></i> Communication Risks</h4>
+                            <p>Potential for misinterpreting speech or missing distress signals</p>
+                        </div>
+
+                        <div class="gap-card">
+                            <h4><i class="fas fa-brain"></i> Algorithmic Bias</h4>
+                            <p>Risks from limited training data on diverse elderly populations</p>
+                        </div>
+
+                        <div class="gap-card">
+                            <h4><i class="fas fa-lock"></i> Data Privacy</h4>
+                            <p>Protecting sensitive health and personal information</p>
+                        </div>
+
+                        <div class="gap-card">
+                            <h4><i class="fas fa-eye"></i> Transparency</h4>
+                            <p>Need to clarify system limits and emotional influence</p>
+                        </div>
+
+                        <div class="gap-card">
+                            <h4><i class="fas fa-hands-helping"></i> Accountability</h4>
+                            <p>Establishing clear responsibility for system decisions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theoretical-foundation">
+                    <div class="theory-card">
+                        <h3><i class="fas fa-shapes"></i> Peter-Paul Verbeek's Technological Mediation</h3>
+                        <p>Our tool operationalizes Verbeek's theory of how technology shapes human behavior:</p>
+
+                        <ul>
+                            <li>How will ROSE mediate care relationships?</li>
+                            <li>What behaviors might it encourage or discourage?</li>
+                            <li>How might it change perceptions of aging?</li>
+                            <li>What moral decisions might it influence?</li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-card">
+                        <h3><i class="fas fa-heart"></i> Batya Friedman's Value-Sensitive Design</h3>
+                        <p>Our approach embodies Friedman's principles of embedding ethics upfront:</p>
+
+                        <ul>
+                            <li>Human welfare as a core value</li>
+                            <li>Respect for privacy</li>
+                            <li>Ensuring trust through transparency</li>
+                            <li>Freedom from bias</li>
+                            <li>Environmental sustainability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <h3>The Tool as Mirror and Compass</h3>
+
+                <div class="benefits-container">
+                    <div class="benefit-card">
+                        <h3><i class="fas fa-mirror"></i> The Mirror</h3>
+                        <p>Reflects hidden biases and unintended impacts</p>
+                        <ul>
+                            <li>Reveals unconscious assumptions</li>
+                            <li>Exposes potential harms to vulnerable groups</li>
+                            <li>Surfaces ethical blind spots</li>
+                            <li>Highlights value trade-offs</li>
+                        </ul>
+                    </div>
+
+                    <div class="benefit-card">
+                        <h3><i class="fas fa-compass"></i> The Compass</h3>
+                        <p>Guides designers toward ethical outcomes</p>
+                        <ul>
+                            <li>Directs inclusive design practices</li>
+                            <li>Points to equitable solutions</li>
+                            <li>Orients toward long-term sustainability</li>
+                            <li>Navigates complex ethical dilemmas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ethics-card">
+                    <h3><i class="fas fa-check-circle"></i> Ensuring Responsible Innovation</h3>
+                    <p>By making ethics tangible across all development phases, the Anonymous Mini Ethics Worksheet helps ensure responsible innovation:</p>
+
+                    <ul>
+                        <li><strong>Continuous Integration:</strong> Ethics considered at every stage, not just as an afterthought</li>
+                        <li><strong>Cross-functional Engagement:</strong> Involves all stakeholders in ethical reflection</li>
+                        <li><strong>Adaptive Framework:</strong> Evolves with the project and new ethical challenges</li>
+                        <li><strong>Practical Implementation:</strong> Translates philosophical concepts into actionable design practices</li>
+                        <li><strong>Accountability:</strong> Creates a record of ethical considerations and decisions</li>
+                    </ul>
+
+                    <p>The worksheet serves as both a reflective tool and a practical guide, helping designers create technology that respects human dignity and promotes social good.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
