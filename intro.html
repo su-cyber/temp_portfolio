@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROSE Social Robot Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --secondary: #6c5ce7;
+            --accent: #00cec9;
+            --dark: #2d3436;
+            --light: #f4f7f9;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #ff7675;
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e6e9f0 100%);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,100 0,100" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 100% 100%;
+            opacity: 0.3;
+        }
+
+        header h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            animation: fadeInDown 1s ease;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeInDown 1.2s ease;
+        }
+
+        .socials {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .socials a:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            text-align: center;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            padding: 40px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .course-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .intro-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .intro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .intro-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--primary);
+        }
+
+        .mindmap-placeholder img{
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 30px 0;
+        }
+
+        .mindmap-placeholder i {
+            font-size: 4rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .reflection-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .reflection-card h3 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .reflection-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .reflection-content p {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .reflection-content p:before {
+            content: """;
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+        }
+
+        .tool-card-header {
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .tool-card-content {
+            padding: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(108, 92, 231, 0.6);
+        }
+
+        .reference-box {
+            background: rgba(0,0,0,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .reference-box h4 {
+            color: var(--secondary);
+        }
+
+        .reference-list {
+            padding-left: 20px;
+        }
+
+        .reference-list li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 60px 0 40px;
+            margin-top: 80px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.4rem;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 80px 0 60px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <section id="social-robot">
+        <div class="container">
+
+
+            <div id="introduction" class="card animate-on-scroll">
+                <h3>Introducing ROSE: Transforming Elderly Care</h3>
+
+                <div class="intro-container">
+                    <div class="intro-card">
+                        <h3><i class="fas fa-robot"></i> About ROSE</h3>
+                        <p>ROSE is an innovative care robot developed by Heemskerk Innovative Technology to support elderly care facilities. Designed to serve as both a nursing assistant and nutritionist, ROSE provides comprehensive support through:</p>
+
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-heartbeat"></i> Health Monitoring</h4>
+                                <p>Tracking vital signs and detecting changes in residents' health conditions</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-utensils"></i> Nutrition Management</h4>
+                                <p>Monitoring meals and dietary requirements to ensure proper nutrition</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-pills"></i> Medication Adherence</h4>
+                                <p>Reminding residents to take medications at scheduled times</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-comments"></i> Social Interaction</h4>
+                                <p>Providing companionship and emotional support through conversation</p>
+                            </div>
+                        </div>
+
+                        <p>By automating these essential daily tasks, ROSE significantly reduces staff workload while ensuring residents receive consistent, personalized care tailored to their individual needs.</p>
+                    </div>
+
+                    <div class="intro-card">
+                        <h3><i class="fas fa-map"></i> Problem Space Mind Map</h3>
+                        <p>Our exploration began with a comprehensive mind mapping exercise to visualize the complex ecosystem of elderly care needs:</p>
+
+                        <div class="mindmap-placeholder">
+                            <img src="assets/mind_map.jpg" alt='mind map' style='position:relative; left:30%;'/>
+                        </div>
+
+                        <p>This visualization helped us identify key areas where robotic assistance could provide the most value, including health monitoring, emotional support, and daily task management.</p>
+                    </div>
+
+                    <div class="intro-card">
+                        <h3><i class="fas fa-cubes"></i> Essential Building Blocks</h3>
+                        <p>From our mindmap, we identified several core components essential for ROSE's functionality:</p>
+
+                        <ul>
+                            <li><strong>Mood Detection:</strong> Sensors that analyze facial expressions, speech patterns, and vital signs</li>
+                            <li><strong>Emotional Expression:</strong> Simple display mechanisms to convey ROSE's emotional state</li>
+                            <li><strong>Comfort Systems:</strong> Calming sounds, ambient lighting, and voice interactions</li>
+                            <li><strong>Decision Logic:</strong> Systems to determine appropriate responses to various situations</li>
+                            <li><strong>Memory Functions:</strong> Tracking changes in resident conditions over time</li>
+                            <li><strong>Communication Tools:</strong> Video call interfaces to connect residents with families</li>
+                        </ul>
+
+                        <p>These elements transform ROSE from a simple machine into a compassionate companion that actively listens and responds to residents' needs.</p>
+                    </div>
+
+                    <div class="intro-card">
+                        <h3><i class="fas fa-sitemap"></i> Functional Breakdown</h3>
+                        <p>We deconstructed ROSE's capabilities into manageable components to explore early prototyping possibilities:</p>
+
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-smile"></i> Mood Tracking</h4>
+                                <p>Understanding patient emotional states through various indicators</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-apple-alt"></i> Nutritional Guidance</h4>
+                                <p>Suggesting appropriate meals and beverages based on health needs</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-bell"></i> Alert Systems</h4>
+                                <p>Notifying staff when intervention is required</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-lightbulb"></i> Comfort Features</h4>
+                                <p>Using lights and sounds to create calming environments</p>
+                            </div>
+                        </div>
+
+                        <p>Many of these functions can be effectively prototyped using Wizard-of-Oz techniques, where human operators control aspects of ROSE's behavior behind the scenes during testing phases.</p>
+                    </div>
+
+                    <div class="intro-card">
+                        <h3><i class="fas fa-flask"></i> Experimental Approaches</h3>
+                        <p>We explored several innovative methods to enhance ROSE's capabilities:</p>
+
+                        <ul>
+                            <li><strong>Mood Detection Tests:</strong> ROSE asks residents about their emotional state and adapts behavior accordingly</li>
+                            <li><strong>Empathy Comparisons:</strong> Contrasting user reactions to task-focused versus emotionally-responsive versions</li>
+                            <li><strong>Prototyping Tools:</strong> Using Scratch programming and puppeteering to simulate comforting features</li>
+                            <li><strong>Feedback Systems:</strong> Simulating multi-day mood tracking to enable earlier interventions</li>
+                        </ul>
+
+                        <p>These experiments provide valuable insights into which emotional and social features truly matter in care environments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tools" class="card animate-on-scroll">
+                <h3>Design Tools Selection</h3>
+
+                <div class="intro-container">
+                    <div class="intro-card">
+                        <h3><i class="fas fa-tools"></i> Comprehensive Toolset</h3>
+                        <p>We employed a carefully selected set of design tools to create an effective, user-centered robot:</p>
+
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-sitemap"></i> Mind Mapping</h4>
+                                <p>Visually organizing complex needs and interactions in elderly care settings</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-film"></i> Storyboarding</h4>
+                                <p>Visualizing both ideal and problematic interactions between stakeholders</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-laptop-code"></i> Scratch Prototyping</h4>
+                                <p>Simulating conditional behaviors without physical hardware</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <h4><i class="fas fa-lightbulb"></i> Expression Tools</h4>
+                                <p>Implementing light and sound cues for emotional communication</p>
+                            </div>
+                        </div>
+
+                        <div class="reference-box">
+                            <h4><i class="fas fa-book"></i> Research References</h4>
+                            <ul class="reference-list">
+                                <li>Davies, 2011 - Mind mapping for HRI projects</li>
+                                <li>Hart, 2013 - Storyboarding for interactive systems</li>
+                                <li>ChatScratch Study, 2024 - Low-fidelity prototyping</li>
+                                <li>Breazeal, 2003; Dautenhahn, 2007 - Multimodal feedback</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="intro-card">
+                        <h3><i class="fas fa-robot"></i> Embodiment Exploration</h3>
+                        <p>To investigate how physical form influences trust and comfort, we utilized:</p>
+
+                        <div class="feature-card">
+                            <h4><i class="fas fa-cards"></i> Embodiment Card Game</h4>
+                            <p>A participatory tool enabling experimentation with different robot appearances and their impact on user perceptions</p>
+                        </div>
+
+                        <p>This approach is supported by research on embodiment and anthropomorphism in social robotics (Fink, 2012; van Straten et al., 2020)</p>
+
+                        <h4 style="margin-top: 30px;"><i class="fas fa-project-diagram"></i> Behavior Modeling</h4>
+                        <p>For ROSE's decision-making processes, we implemented:</p>
+
+                        <ul>
+                            <li><strong>Behavior Trees:</strong> Standard structures for complex agent behaviors (Colledanchise & Ögren, 2018)</li>
+                            <li><strong>Context Swapping:</strong> Imagining how actions might be received in different care settings (Carroll, 2000)</li>
+                        </ul>
+
+                        <h4 style="margin-top: 30px;"><i class="fas fa-balance-scale"></i> Ethical Considerations</h4>
+                        <p>We incorporated an ethics canvas to guide reflection on social implications:</p>
+
+                        <div class="feature-card">
+                            <h4><i class="fas fa-clipboard-check"></i> Ethics Canvas</h4>
+                            <p>Anticipating unintended consequences and promoting responsible innovation</p>
+                        </div>
+
+                        <p>This aligns with value-sensitive design frameworks increasingly used in HRI (Van Wynsberghe, 2013; Umbrello & van de Poel, 2021)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reflection" class="card animate-on-scroll">
+                <h3>Design Reflections</h3>
+
+                <div class="reflection-card">
+                    <h3><i class="fas fa-lightbulb"></i> Reflection #1: The Heart of HRI</h3>
+                    <div class="reflection-content">
+                        <p>Design research feels like the core of Human-Robot Interaction. It's not just about creating functional robots, but understanding how people experience and relate to them. It's easy to become absorbed in technology and overlook the human element. Design research compels us to pause, observe, and listen: How do people genuinely feel around robots? What do they expect? It's about balancing technical capabilities with human needs to foster comfort, respect, and emotional connection.</p>
+
+                        <p><strong>How design research connects to HRI:</strong> We often assume robots require physical forms to feel "real," but digital assistants challenge this notion. Personality and interaction style sometimes matter more than physical shape. Yet, interacting with an embodied robot creates a distinct sense of presence. Embodiment adds a connection layer difficult to replicate with voice or text alone, even with identical AI. Both approaches have value, with effectiveness measured by how well they meet human social needs.</p>
+
+                        <p><strong>Digital vs Embodiment:</strong> The film "Her" profoundly redefines what "being with" someone means. The concept of a disembodied AI as a true companion is powerful and beautiful, showing connection transcends physical presence. However, it also raises skepticism - would this work beyond cinema? Humans rely on subtle nonverbal cues to build trust and bonds. Without a body, can AI truly bridge these gaps, or is it merely an appealing illusion?</p>
+
+                        <p><strong>Why "Her" presents an incomplete argument:</strong> I once believed the robot revolution was imminent, but reality is more complex. While technology advances rapidly, human acceptance and trust develop slowly. Robots aren't mere gadgets; they're social entities needing to integrate into our messy, emotional human world. The transformation occurs gradually, almost quietly, in healthcare, factories, and homes. It's less a sudden leap and more a careful interplay between technological progress and social adaptation.</p>
+                    </div>
+                </div>
+
+                <div class="intro-container">
+                    <div class="intro-card">
+                        <h3><i class="fas fa-hotel"></i> The Henn na Hotel Experiment</h3>
+                        <p>The Henn na Hotel's robot staff experiment offered fascinating insights into automation limits. While a fully robotic hotel seemed futuristic and exciting, many robots struggled with basic tasks and disappointed guests. This demonstrated that technology alone is insufficient - human empathy and flexibility remain crucial, especially in hospitality. The hotel's decision to reintroduce human staff alongside robots underscores the importance of balancing automation with human touch for meaningful service experiences.</p>
+                    </div>
+
+                    <div class="intro-card">
+                        <h3><i class="fas fa-crow"></i> Nabaztag: An Early Vision</h3>
+                        <p>Nabaztag represented an early dream of the social internet, giving digital life a physical presence. Ahead of its time, it aspired to be a social companion but faced technological limitations and user uncertainty. Its novelty faded quickly due to lacking deeper meaning and adaptability. Nabaztag reminds us that social robots need ongoing relevance and authentic interaction beyond their form.</p>
+                    </div>
+
+                    <div class="intro-card">
+                        <h3><i class="fas fa-hands"></i> Cuddlebits: The Power of Touch</h3>
+                        <p>Cuddlebits highlighted the significance of touch and play, often overlooked in robotics. It revealed how physical interaction creates emotional bonds impossible through screens or voice alone. Research showed that robots integrated into our tactile daily lives can offer genuine, lasting comfort and connection - a powerful insight for social technology design.</p>
+                    </div>
+
+                    <div class="intro-card">
+                        <h3><i class="fas fa-heart-broken"></i> Be Right Back: Emotional Boundaries</h3>
+                        <p>"Be Right Back" resonated personally as a poignant exploration of technology attempting and failing to replace human loss. It revealed the dangers of expecting too much from AI or robots to fill emotional voids. The episode challenges us to distinguish between authentic and simulated experiences and consider their impact on wellbeing. It's a crucial reminder to design with care, respect, and honesty, recognizing that robots should support human life, not imitate it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn" style='position:relative; left:40%;' >Back to Home Page</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ROSE Social Robot Design Portfolio</p>
+            <p>Human-Robot Interaction Design Project</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: target.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

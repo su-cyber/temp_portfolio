@@ -691,6 +691,82 @@
                     grid-template-columns: 1fr;
                 }
             }
+
+            /* Scenario Design Tool Specific Styles */
+#scenario-tool {
+    padding: 100px 0;
+}
+
+.scenario-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.scenario-step {
+    flex: 1;
+    min-width: 120px;
+    background: rgba(108, 92, 231, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 30px;
+    height: 30px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.scenario-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.scenario-light, .scenario-dark {
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.scenario-light {
+    background: rgba(116, 185, 255, 0.1);
+    border-left: 5px solid #74b9ff;
+}
+
+.scenario-dark {
+    background: rgba(45, 52, 54, 0.1);
+    border-left: 5px solid #2d3436;
+}
+
+.reference-box {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scenario-container {
+        grid-template-columns: 1fr;
+    }
+
+    .scenario-step {
+        min-width: 100%;
+    }
+}
         </style>
 </head>
 <body>
@@ -716,7 +792,8 @@
           <div class="container nav-container">
               <div class="logo">SK</div>
               <div class="nav-links">
-                  <a href="#social-robot">Social Robot Design</a>
+                  <a href="#social-robot">Intro</a>
+                  <a href="#scenario-tool">Scenario Tool</a>
                   <a href="#tool-detail">Expression Tool</a>
                   <a href="#embodiment-tool">Embodiment Tool</a>
               </div>
@@ -729,11 +806,22 @@
 
             <div class="course-intro animate-on-scroll">
                 <p>This portfolio documents my journey through the Social Robot Design course, showcasing the tools I've developed and applied in various scenarios. The course focused on designing expressive behaviors for socially assistive robots, particularly in elderly care environments.</p>
+                  <a href="intro.html" class="btn">Read Introduction</a>
             </div>
 
             <div class="card animate-on-scroll">
                 <h3>Designed Tools</h3>
                 <div class="tools-container">
+                  <div class="tool-card">
+                      <div class="tool-card-header" style="background: linear-gradient(135deg, #00cec9 0%, #00b894 100%);">
+                          <h3>Scenario Tool</h3>
+                          <p>Light & Sound Modality</p>
+                      </div>
+                      <div class="tool-card-content">
+                          <p>A comprohensive multi-step scenario building tool</p>
+                          <a href="#scenario-tool" class="btn">Explore Tool</a>
+                      </div>
+                  </div>
                     <div class="tool-card">
                         <div class="tool-card-header">
                             <h3>Expression Tool</h3>
@@ -761,6 +849,243 @@
             </div>
         </div>
     </section>
+
+    <!-- Insert this section after the "Designed Tools" card and before the Expression Tool section -->
+<section id="scenario-tool">
+    <div class="container">
+        <div class="tool-hero">
+            <h1>Scenario-Based Design Tool</h1>
+            <p>A comprehensive approach to visualizing human-robot interactions in elderly care</p>
+        </div>
+
+        <div class="tool-content">
+            <div class="card animate-on-scroll">
+                <h3>Our Scenario Design Framework</h3>
+                <p>Our scenario design tool consisted of three interconnected components that allowed us to visualize and test interactions between ROSE, residents, and care staff:</p>
+
+                <div class="design-process">
+                    <div class="process-step">
+                        <h3><i class="fas fa-sitemap"></i> Mind Mapping</h3>
+                        <p>We mapped the problem space around elderly care using a structured approach that broke down interactions into five key dimensions: who, what, where, how, and emotions.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <h3><i class="fas fa-film"></i> Storyboarding</h3>
+                        <p>We translated mind maps into visual storyboards depicting sequences of interactions, focusing on user mood, health data, and emotional cues.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <h3><i class="fas fa-laptop-code"></i> Scratch Implementation</h3>
+                        <p>We created low-fidelity animations using Scratch to simulate interaction flows without needing physical hardware.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <h3>Step 1: Mind Mapping</h3>
+
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <div style="background: linear-gradient(45deg, #74b9ff, #0984e3); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                            <img src='assets/light_map.jpg' alt='light scenario'/>
+                        </div>
+                        <div class="gallery-caption">Light Scenario Mind Map</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div style="background: linear-gradient(45deg, #2d3436, #636e72); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                            <img src='assets/dark_map.jpg' alt='dark scenario'/>
+                        </div>
+                        <div class="gallery-caption">Dark Scenario Mind Map</div>
+                    </div>
+                </div>
+
+                <p>We began with a structured mind map titled "Morning Interaction with ROSE" to define the interaction scope. This approach helped organize our design along five key dimensions:</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4><i class="fas fa-user"></i> Who</h4>
+                        <p>ROSE, the nurse, and the resident (Mrs. Jane Doe)</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-tasks"></i> What</h4>
+                        <p>Emotional check-in, health monitoring, and nutrition recommendations</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-map-marker-alt"></i> Where</h4>
+                        <p>Care home lounge during breakfast</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-cogs"></i> How</h4>
+                        <p>Through speech, sensing, logging, and adaptive suggestions</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-smile"></i> Emotions</h4>
+                        <p>User starts low-energy but ends feeling seen and supported</p>
+                    </div>
+                </div>
+
+                <div class="reference-box">
+                    <p><strong>Motivation:</strong> According to Davies (2011), mind mapping helps organize complex user needs and design elements in early-stage HRI projects, guiding narrative development and behavior planning.</p>
+                    <p><strong>Reference:</strong> <a href="https://doi.org/10.1007/s10734-010-9387-6" target="_blank">https://doi.org/10.1007/s10734-010-9387-6</a></p>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <h3>Step 2: Storyboarding</h3>
+
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <div style="background: linear-gradient(45deg, #a29bfe, #6c5ce7); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                            <img src='assets/light_board.jpg' alt='light board'/>
+                        </div>
+                        <div class="gallery-caption">Light Scenario Storyboard</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div style="background: linear-gradient(45deg, #2d3436, #636e72); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                          <img src='assets/dark_board.jpg' alt='light scenario'/>
+                        </div>
+                        <div class="gallery-caption">Dark Scenario Storyboard</div>
+                    </div>
+                </div>
+
+                <p>Storyboards helped us visualize both ideal and problematic outcomes. We focused on user mood, health data, robot behavior, and caregiver responses. Each frame illustrated key social and emotional cues.</p>
+
+                <h4>Light Scenario Example</h4>
+                <div class="scenario-flow">
+                    <div class="scenario-step">
+                        <div class="step-number">1</div>
+                        <p>Quiet breakfast atmosphere</p>
+                    </div>
+                    <div class="scenario-step">
+                        <div class="step-number">2</div>
+                        <p>ROSE asks how the resident is feeling</p>
+                    </div>
+                    <div class="scenario-step">
+                        <div class="step-number">3</div>
+                        <p>Resident reports low mood and blood pressure</p>
+                    </div>
+                    <div class="scenario-step">
+                        <div class="step-number">4</div>
+                        <p>ROSE logs vitals and recommends orange juice</p>
+                    </div>
+                    <div class="scenario-step">
+                        <div class="step-number">5</div>
+                        <p>Nurse receives health alert</p>
+                    </div>
+                    <div class="scenario-step">
+                        <div class="step-number">6</div>
+                        <p>Nurse brings juice, thanking ROSE</p>
+                    </div>
+                    <div class="scenario-step">
+                        <div class="step-number">7</div>
+                        <p>Resident smiles, feeling acknowledged</p>
+                    </div>
+                </div>
+
+                <div class="reference-box">
+                    <p><strong>Motivation:</strong> Hart (2013) emphasizes the value of storyboarding in teaching and prototyping interactive systems. This method helped us pre-visualize breakdowns and empathic moments in HRI.</p>
+                    <p><strong>Reference:</strong> <a href="https://doi.org/10.4324/9780080552781" target="_blank">https://doi.org/10.4324/9780080552781</a></p>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <h3>Step 3: Scratch Implementation</h3>
+
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <div style="background: linear-gradient(45deg, #00cec9, #00b894); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                          <iframe
+        src="https://scratch.mit.edu/projects/1191963222/embed "
+        allowtransparency="true"
+        width="100%"
+        height="300"
+        frameborder="0"
+        scrolling="no"
+        style="border: none; border-radius: 15px; overflow: hidden;">
+    </iframe>
+                        </div>
+                        <div class="gallery-caption">Light Scenario Scratch Implementation</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div style="background: linear-gradient(45deg, #2d3436, #636e72); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                          <iframe
+        src="https://scratch.mit.edu/projects/1192001510/embed "
+        allowtransparency="true"
+        width="100%"
+        height="300"
+        frameborder="0"
+        scrolling="no"
+        style="border: none; border-radius: 15px; overflow: hidden;">
+    </iframe>
+                        </div>
+                        <div class="gallery-caption">Dark Scenario Scratch Implementation</div>
+                    </div>
+                </div>
+
+                <p>We implemented the storyboard logic in Scratch to simulate:</p>
+                <ul>
+                    <li>Conditional behaviors (e.g., "If mood = low → ask follow-up → alert nurse")</li>
+                    <li>Dialogue timing and feedback loops</li>
+                    <li>Visibility of emotional indicators and dashboard alerts</li>
+                </ul>
+
+                <div class="reference-box">
+                    <p><strong>Motivation:</strong> Research from ACM's ChatScratch study (2024) shows how Scratch can be used to prototype autonomous and reactive behaviors without requiring code, especially useful for testing logic paths and involving non-technical stakeholders.</p>
+                    <p><strong>Reference:</strong> <a href="https://doi.org/10.1145/3613904.3642229" target="_blank">https://doi.org/10.1145/3613904.3642229</a></p>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <h3>Scenario Outcomes</h3>
+
+                <div class="scenario-container">
+                    <div class="scenario-light">
+                        <h4><i class="fas fa-sun"></i> Light Scenario</h4>
+                        <p>Mrs. Jane Doe is quiet at breakfast. ROSE gently asks, "How are you feeling today?" She presses a sad face and the robot logs her blood pressure as slightly low. It recommends iron-rich juice and alerts the nurse. Later, the nurse thanks ROSE for catching something she might have missed. Jane smiles. It's a small moment, but it feels like someone's paying attention.</p>
+                    </div>
+
+                    <div class="scenario-dark">
+                        <h4><i class="fas fa-moon"></i> Dark Scenario</h4>
+                        <p>Mr. John Doe skips three meals and rates his mood as 1 out of 5. ROSE logs everything, but due to staff shortages, no one sees the alerts. Days pass. ROSE updates its chart, but the system relies on human eyes that never come. By the time someone notices, John is too weak to get out of bed. ROSE was technically working, but alone, it wasn't enough.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <h3>Reflective Questions</h3>
+
+                <div class="question">
+                    <h3><i class="fas fa-question-circle"></i> Science Fiction Prototyping vs Scenario-Based Design</h3>
+                    <p>Science Fiction Prototyping (SFP), as described by B.D. Johnson, is more open-ended and creative compared to traditional scenario-based design. SFP uses storytelling to explore future possibilities, imagining how technology might fit into daily life or change society. In contrast, scenario-based design is grounded in real user tasks, needs, and current technologies. It's structured and focused on usability, while SFP encourages thinking beyond current possibilities, making it powerful for innovation and ethical foresight.</p>
+                </div>
+
+                <div class="question">
+                    <h3><i class="fas fa-question-circle"></i> The 21st Century Robot Project</h3>
+                    <p>The 21st Century Robot project aimed to let people co-create a robot's personality and appearance. However, the resulting robot ended up similar to existing NAO-type robots - humanoid, predictable, and somewhat generic. This happened partly due to technical limitations and partly because people are drawn to what they recognize as "robot-like." If the project had embraced more unusual forms (animal-shaped or modular designs), it could have offered something more unique and emotionally engaging.</p>
+                </div>
+
+                <div class="question">
+                    <h3><i class="fas fa-question-circle"></i> Consumer Stories vs Reality</h3>
+                    <p>Stories told to consumers about social robots often feel idealized - framing robots as companions, intelligent helpers, or even family members. In reality, most robots today have limited understanding, clunky interactions, and don't fulfill these promises. This gap between advertised capabilities and actual performance creates unrealistic expectations that lead to disappointment.</p>
+                </div>
+
+                <div class="question">
+                    <h3><i class="fas fa-question-circle"></i> Storytelling in HRI</h3>
+                    <p>Storytelling is crucial in social robot design because people relate to robots in human-like ways regardless of actual intelligence. A well-crafted story can make a robot seem more trustworthy and relatable even with basic capabilities. In contexts like elder care, education, or therapy, this emotional layer matters significantly. The story bridges the gap between user and technology, especially when the tech alone can't carry the interaction.</p>
+                </div>
+
+                <div class="question">
+                    <h3><i class="fas fa-question-circle"></i> Evidence-Based Health vs Robot Narratives</h3>
+                    <p>Healthcare interventions require strong evidence before implementation - a cautious, science-first approach essential when health is at stake. Social robots often enter the market without this level of proof, focusing on potential rather than demonstrated capabilities. This creates a contrast: robots are sold on imagination and potential, while health tech requires results and safety validation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Tool Detail Section -->
     <section id="tool-detail">
