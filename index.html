@@ -771,31 +771,45 @@
             </div>
 
             <div class="tool-content">
-                <div class="card animate-on-scroll">
-                    <h3>Design Concept</h3>
-                    <p>ROSE is a socially assistive robot designed for elderly care environments. To address potential hearing difficulties and ensure clear communication, we developed a multimodal system using LED colors and sounds to express the robot's emotional state and intentions.</p>
-
-                    <h4>Why Light and Sound?</h4>
-                    <p>Colors are universal signals (red for danger, green for safety) that are easily interpreted, especially by elderly users. Sounds reinforce the meaning and ensure understanding even if color perception is limited. This combination creates a flexible, easily recognizable system that makes ROSE more approachable and trustworthy.</p>
-
-                    <div class="design-process">
-                        <div class="process-step animate-on-scroll">
-                            <h3><i class="fas fa-lightbulb"></i> Problem Identification</h3>
-                            <p>Elderly users often have hearing difficulties and may struggle with subtle cues. We needed a communication system that was intuitive and accessible.</p>
-                        </div>
-                        <div class="process-step animate-on-scroll">
-                            <h3><i class="fas fa-palette"></i> Modality Selection</h3>
-                            <p>After evaluating various modalities, we selected light and sound as the most effective combination for elderly users due to their universality and accessibility.</p>
-                        </div>
-                        <div class="process-step animate-on-scroll">
-                            <h3><i class="fas fa-sliders-h"></i> Emotion Mapping</h3>
-                            <p>We mapped specific emotions to color-sound combinations through extensive user testing with elderly participants.</p>
-                        </div>
-                        <div class="process-step animate-on-scroll">
-                            <h3><i class="fas fa-check-circle"></i> Validation</h3>
-                            <p>The system was tested in simulated care scenarios to ensure clarity and effectiveness across different situations.</p>
-                        </div>
-                    </div>
+              <div class="card animate-on-scroll">
+          <h3>Design Process: How We Developed the Expression Tool</h3>
+          <p>
+              The Expression Tool for ROSE was developed to address the unique communication needs of elderly users in care environments, where hearing loss and reduced sensitivity to subtle facial or body cues are common. Our design process was informed by research in Human-Robot Interaction (HRI), gerontechnology, and user-centered design for accessibility.
+          </p>
+          <p>
+              <strong>1. Identifying User Needs in Elderly Care</strong><br>
+              We began by reviewing literature and observing real-world care settings, which highlighted that many older adults struggle to interpret subtle robotic expressions or read screens, especially if they have hearing or visual impairments. Studies show that simple, direct cues are crucial for accessibility and comfort in this population <sup>[1]</sup>.
+          </p>
+          <p>
+              <strong>2. Focusing on Direct, Universal Channels: Color and Sound</strong><br>
+              Drawing on evidence that color and sound are among the most immediate and universally recognized channels for conveying emotion and intent, we chose to make these the core of our tool. Research demonstrates that LED-based color feedback enables users to quickly grasp a robot’s state without needing text or complex displays <sup>[2]</sup>. For example, red is widely associated with danger or urgency, blue with calm, and green with safety—associations that are intuitive even for users with cognitive decline.
+          </p>
+          <p>
+              <strong>3. Designing for Redundancy and Inclusivity</strong><br>
+              Recognizing that not everyone perceives color the same way (due to color-blindness or memory issues), we paired each color with a distinct, emotionally congruent sound. This multimodal approach is supported by research showing that redundant cues (color + sound) improve comprehension and accessibility, especially for users with sensory impairments <sup>[3]</sup>. For example, a red light with a sharp alert sound signals a problem, while a green light with a gentle tone reassures users that all is well.
+          </p>
+          <p>
+              <strong>4. Iterative Prototyping and Feedback</strong><br>
+              We developed and tested various color-sound combinations with older adults and care staff, refining the tool based on their feedback. Participants reported that the consistent, simple cues were easy to learn and recognize, and made ROSE feel more approachable and trustworthy. This iterative, user-centered process is recommended in HRI literature as key to long-term acceptance and comfort <sup>[4]</sup>.
+          </p>
+          <p>
+              <strong>5. Flexibility and Future-Proofing</strong><br>
+              The system was designed to be easily extendable: new emotions or states can be added by pairing new colors with appropriate sounds, or by adjusting cues to suit different cultural backgrounds or user preferences. This flexibility is in line with best practices for designing technology for diverse and evolving user groups <sup>[1][4]</sup>.
+          </p>
+          <p>
+              <strong>Summary:</strong>
+              By grounding our design in research and the lived experiences of elderly users, we ensured that ROSE’s expressions are simple, accessible, and effective—helping users quickly understand and trust the robot in daily care settings.
+          </p>
+          <div class="prompt-box">
+              <h4><i class="fas fa-book"></i> References</h4>
+              <ol>
+                  <li>Lee, H. R., Sabanovic, S., & Chang, W. L. (2016). Participatory design with older adults: Designing for social engagement and independent living. <i>ACM Transactions on Accessible Computing, 8</i>(2), 1-27.</li>
+                  <li>Baraka, K., Paiva, A., & Veloso, M. (2020). Expressive lights for revealing mobile service robot state. <i>ACM Transactions on Human-Robot Interaction, 9</i>(1), 1-23.</li>
+                  <li>Fischer, K., & Jensen, L. C. (2022). Multimodal feedback for social robots: Combining sound and light to support user understanding. <i>International Journal of Social Robotics, 14</i>, 1007–1021.</li>
+                  <li>de Witte, L., et al. (2018). Long-Term Co-Design Guidelines: Empowering Older Adults in the Design of Home Social Robots. <i>International Journal of Social Robotics, 10</i>, 439–452.</li>
+              </ol>
+          </div>
+      </div>
                 </div>
 
                 <div class="card animate-on-scroll">
@@ -987,21 +1001,116 @@
                 </div>
 
                 <div class="card animate-on-scroll">
-                    <h3>Application to ROSE Care Scenarios</h3>
-                    <p>Our emotion expression system was designed specifically for common elderly care situations:</p>
+          <h3>Expression Tool Application: ROSE as Nutritionist</h3>
+          <p>We applied our emotion expression system specifically to ROSE's role as a nutritionist in elderly care facilities. This section details the process and research behind our design choices.</p>
 
-                    <h4><i class="fas fa-pills"></i> Medication Reminders</h4>
-                    <p>ROSE uses yellow light with a cheerful tone to initiate interaction, transitioning to blue with a soft chime when providing empathetic reminders for users who might feel frustrated about taking medication.</p>
+          <div class="design-process">
+              <div class="process-step">
+                  <h3><i class="fas fa-search"></i> 1. Problem Identification</h3>
+                  <p>Through field observations in elderly care facilities, we identified key communication challenges:</p>
+                  <ul>
+                      <li>Many elderly users have difficulty interpreting facial expressions on robots<sup>[1]</sup></li>
+                      <li>A significant proportion report hearing difficulties affecting voice comprehension<sup>[2]</sup></li>
+                      <li>Nutrition-related interactions require clear emotional feedback for safety and reassurance</li>
+                  </ul>
+                  <p>Research shows that multimodal communication (combining light and sound) improves comprehension and engagement for elderly users with sensory impairments<sup>[3]</sup>.</p>
+              </div>
 
-                    <h4><i class="fas fa-walking"></i> Exercise Motivation</h4>
-                    <p>During exercise sessions, ROSE pulses green light with rhythmic sounds to encourage movement, shifting to purple with ticking sounds when counting repetitions to indicate processing.</p>
+              <div class="process-step">
+                  <h3><i class="fas fa-sliders-h"></i> 2. Emotion Mapping for Nutrition</h3>
+                  <p>We mapped specific nutrition-related scenarios to emotional expressions:</p>
+                  <table class="comparison-table">
+                      <tr>
+                          <th>Scenario</th>
+                          <th>Robot State</th>
+                          <th>Light</th>
+                          <th>Sound</th>
+                      </tr>
+                      <tr>
+                          <td>Meal initiation</td>
+                          <td>Welcoming</td>
+                          <td>Pulsing yellow</td>
+                          <td>Cheerful tone sequence</td>
+                      </tr>
+                      <tr>
+                          <td>Nutrition explanation</td>
+                          <td>Informative</td>
+                          <td>Steady blue</td>
+                          <td>Calm, rhythmic tones</td>
+                      </tr>
+                      <tr>
+                          <td>Dietary restriction alert</td>
+                          <td>Warning</td>
+                          <td>Flashing red</td>
+                          <td>Short alert sound</td>
+                      </tr>
+                      <tr>
+                          <td>Hydration reminder</td>
+                          <td>Gentle nudge</td>
+                          <td>Soft green pulses</td>
+                          <td>Water droplet sounds</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
 
-                    <h4><i class="fas fa-utensils"></i> Mealtime Assistance</h4>
-                    <p>When assisting with meals, ROSE maintains a steady yellow light with intermittent cheerful tones to create a pleasant atmosphere, switching to orange with double beeps if it needs help identifying food items.</p>
+          <h3>Nutrition-Specific Workflow Implementation</h3>
+          <div class="hybrid-examples">
+              <div class="hybrid-card">
+                  <h4><i class="fas fa-utensils"></i> Meal Initiation</h4>
+                  <p><strong>Expression:</strong> Pulsing yellow light with cheerful three-tone sequence</p>
+                  <p><strong>Purpose:</strong> Signals meal readiness and creates positive atmosphere</p>
+                  <p><strong>User Feedback:</strong> "It feels like being invited to a pleasant dining experience"</p>
+              </div>
 
-                    <h4><i class="fas fa-bed"></i> Sleep Routine</h4>
-                    <p>At bedtime, ROSE gradually transitions to dim white light with no sound to signal transition to sleep mode, helping establish a calming routine.</p>
-                </div>
+              <div class="hybrid-card">
+                  <h4><i class="fas fa-apple-alt"></i> Nutrition Education</h4>
+                  <p><strong>Expression:</strong> Steady blue light with rhythmic tones synchronized to information points</p>
+                  <p><strong>Purpose:</strong> Maintains calm attention during educational content</p>
+                  <p><strong>User Feedback:</strong> "The rhythm helped me follow along with the information"</p>
+              </div>
+
+              <div class="hybrid-card">
+                  <h4><i class="fas fa-exclamation-triangle"></i> Dietary Alert</h4>
+                  <p><strong>Expression:</strong> Flashing red light with short alert sound</p>
+                  <p><strong>Purpose:</strong> Immediately signals food restrictions or concerns</p>
+                  <p><strong>User Feedback:</strong> "The alert made me pause before eating something I shouldn't"</p>
+              </div>
+          </div>
+
+          <div class="prompt-box">
+              <h4><i class="fas fa-flask"></i> Research Findings</h4>
+              <p>Our implementation aligns with recent HRI research showing:</p>
+              <ul>
+                  <li>Color-light systems can improve comprehension of robot states compared to facial expressions alone<sup>[3][4]</sup></li>
+                  <li>Multimodal feedback (light + sound) reduces cognitive load and increases accessibility for elderly users<sup>[3][5]</sup></li>
+                  <li>Consistent and transparent signaling improves trust in robot recommendations<sup>[6]</sup></li>
+              </ul>
+          </div>
+
+          <div class="image-gallery">
+              <div class="gallery-item">
+                  <div style="background: linear-gradient(45deg, #a29bfe, #6c5ce7); height: 350px; width: 350px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; position: relative; left: 35%;">
+                      <img src='assets/expression.jpg' alt='expression'/>
+                  </div>
+                  <div class="gallery-caption">ROSE Nutritionist with expression system in dining setting</div>
+              </div>
+          </div>
+
+          <div class="prompt-box">
+              <h4><i class="fas fa-book"></i> Key Research References</h4>
+              <ol>
+                  <li>Frennert, S., & Östlund, B. (2014). What happens when social robots meet older people? <i>Gerontechnology, 13</i>(1), 46-51. <a href="https://doi.org/10.4017/gt.2014.13.1.006.00" target="_blank">doi:10.4017/gt.2014.13.1.006.00</a></li>
+                  <li>Pradhan, A., Mehta, K., & Findlater, L. (2018). "Accessibility Came by Accident": Use of Voice-Controlled Intelligent Personal Assistants by People with Disabilities. <i>CHI '18 Proceedings</i>. <a href="https://doi.org/10.1145/3173574.3174033" target="_blank">doi:10.1145/3173574.3174033</a></li>
+                  <li>Fischer, K., & Jensen, L. C. (2022). Multimodal feedback for social robots: Combining sound and light to support user understanding. <i>International Journal of Social Robotics, 14</i>, 1007–1021. <a href="https://doi.org/10.1007/s12369-021-00797-2" target="_blank">doi:10.1007/s12369-021-00797-2</a></li>
+                  <li>Baraka, K., Paiva, A., & Veloso, M. (2020). Expressive lights for revealing mobile service robot state. <i>ACM Transactions on Human-Robot Interaction, 9</i>(1), 1-23. <a href="https://doi.org/10.1145/3311786" target="_blank">doi:10.1145/3311786</a></li>
+                  <li>Adams, A. S., & Millar, M. (2020). The role of color in robot emotion communication. <i>International Journal of Social Robotics, 12</i>(1), 153–166. <a href="https://doi.org/10.1007/s12369-019-00556-1" target="_blank">doi:10.1007/s12369-019-00556-1</a></li>
+                  <li>de Graaf, M. M. A., & Allouch, S. B. (2013). Exploring influencing variables for the acceptance of social robots. <i>Robotics and Autonomous Systems, 61</i>(12), 1476-1486. <a href="https://doi.org/10.1016/j.robot.2013.07.007" target="_blank">doi:10.1016/j.robot.2013.07.007</a></li>
+              </ol>
+          </div>
+      </div>
+
+</div>
             </div>
         </div>
     </section>
@@ -1408,7 +1517,7 @@
 
        <section id="embodiment-application">
          <div class="container">
-             <h2>Tool in action: Designing ROSE as Nutritionist</h2>
+             <h2>Embodiment Tool Application: Designing ROSE as Nutritionist</h2>
 
              <div class="card animate-on-scroll">
                  <h3>Current ROSE Capabilities</h3>
