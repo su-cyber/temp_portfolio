@@ -767,6 +767,209 @@
         min-width: 100%;
     }
 }
+
+#behavior-tool {
+           background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+           padding: 100px 0;
+       }
+
+       .tool-hero {
+           padding: 80px 40px;
+           background: linear-gradient(135deg, #5a67d8 0%, #805ad5 100%);
+           color: white;
+           text-align: center;
+           border-radius: 20px;
+           margin-bottom: 50px;
+       }
+
+       .behavior-intro {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 40px;
+           align-items: center;
+           margin-bottom: 60px;
+       }
+
+       .behavior-features {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           gap: 30px;
+           margin: 40px 0;
+       }
+
+       .feature-card {
+           background: white;
+           border-radius: 15px;
+           padding: 30px;
+           box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+           transition: var(--transition);
+           border-left: 5px solid var(--accent);
+       }
+
+       .feature-card:hover {
+           transform: translateY(-8px);
+           box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+       }
+
+       .feature-card h3 {
+           display: flex;
+           align-items: center;
+           gap: 15px;
+           margin-bottom: 20px;
+           color: var(--secondary);
+       }
+
+       .feature-card ul {
+           padding-left: 25px;
+       }
+
+       .feature-card li {
+           margin-bottom: 12px;
+           position: relative;
+           padding-left: 25px;
+       }
+
+       .feature-card li:before {
+           content: "•";
+           position: absolute;
+           left: 0;
+           color: var(--accent);
+           font-size: 1.5rem;
+           line-height: 1;
+       }
+
+       .workflow-container {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 40px;
+           margin: 60px 0;
+       }
+
+       .workflow-step {
+           background: white;
+           border-radius: 15px;
+           padding: 30px;
+           box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+       }
+
+       .workflow-step h3 {
+           display: flex;
+           align-items: center;
+           gap: 15px;
+           margin-bottom: 25px;
+       }
+
+       .workflow-step-number {
+           display: inline-flex;
+           align-items: center;
+           justify-content: center;
+           width: 40px;
+           height: 40px;
+           background: var(--accent);
+           color: white;
+           border-radius: 50%;
+           font-weight: bold;
+           font-size: 1.2rem;
+           margin-right: 15px;
+       }
+
+       .diagram-container {
+           background: white;
+           border-radius: 15px;
+           padding: 30px;
+           margin: 50px 0;
+           box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+           text-align: center;
+       }
+
+       .diagram-container img {
+           max-width: 100%;
+           border-radius: 10px;
+           box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+       }
+
+       .diagram-caption {
+           margin-top: 20px;
+           font-style: italic;
+           color: #666;
+       }
+
+       .research-foundation {
+           background: linear-gradient(135deg, #00cec9 0%, #00b894 100%);
+           color: white;
+           border-radius: 15px;
+           padding: 40px;
+           margin: 60px 0;
+       }
+
+       .scenario-demo {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 40px;
+           margin: 50px 0;
+       }
+
+       .scenario-card {
+           background: white;
+           border-radius: 15px;
+           padding: 30px;
+           box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+       }
+
+       .scenario-card-header {
+           padding-bottom: 20px;
+           margin-bottom: 20px;
+           border-bottom: 2px solid var(--light);
+       }
+
+       .outcomes-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+           gap: 25px;
+           margin: 40px 0;
+       }
+
+       .outcome-card {
+           background: rgba(108, 92, 231, 0.05);
+           border-radius: 15px;
+           padding: 25px;
+           text-align: center;
+           transition: var(--transition);
+       }
+
+       .outcome-card:hover {
+           transform: translateY(-5px);
+           background: rgba(108, 92, 231, 0.1);
+       }
+
+       .outcome-card i {
+           font-size: 2.5rem;
+           color: var(--accent);
+           margin-bottom: 15px;
+       }
+
+       /* Responsive adjustments */
+       @media (max-width: 992px) {
+           .behavior-intro,
+           .workflow-container,
+           .scenario-demo {
+               grid-template-columns: 1fr;
+           }
+
+           .tool-hero h1 {
+               font-size: 2.8rem;
+           }
+       }
+
+       @media (max-width: 768px) {
+           .tool-hero {
+               padding: 60px 20px;
+           }
+
+           .tool-hero h1 {
+               font-size: 2.2rem;
+           }
+       }
         </style>
 </head>
 <body>
@@ -796,6 +999,7 @@
                   <a href="#scenario-tool">Scenario Tool</a>
                   <a href="#tool-detail">Expression Tool</a>
                   <a href="#embodiment-tool">Embodiment Tool</a>
+                  <a href="#behavior-tool">Behaviour Tool</a>
               </div>
           </div>
       </nav>
@@ -841,6 +1045,16 @@
                         <div class="tool-card-content">
                             <p>An interactive card game to design the embodiment of a social robot.</p>
                             <a href="#embodiment-tool" class="btn">Explore Tool</a>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-card-header">
+                            <h3>Behaviour Tool</h3>
+                            <p>Behaviour Tree with Context switching</p>
+                        </div>
+                        <div class="tool-card-content">
+                            <p>A comprehensive behaviour tree tool to dictate the behaviour of a Social Robot</p>
+                            <a href="#behavior-tool" class="btn">Explore Tool</a>
                         </div>
                     </div>
                 </div>
@@ -1991,6 +2205,226 @@
          </div>
      </section>
 </section>
+
+<!-- Behavior Tool Section -->
+   <section id="behavior-tool">
+       <div class="container">
+           <div class="tool-hero">
+               <h1>Behavior Design Tool</h1>
+               <p>Modular Behavior Trees with Context Swaps for Scalable Social Robotics</p>
+           </div>
+
+           <div class="card animate-on-scroll">
+               <div class="behavior-intro">
+                   <div>
+                       <h3>Revolutionizing Robot Behavior Design</h3>
+                       <p>Our Behavior Tree with Context Swap tool enables scalable and modular robot behavior prototyping without full reliance on Wizard of Oz setups. This framework prepares robots to face real-world uncertainty by integrating:</p>
+
+                       <div class="behavior-features">
+                           <div class="feature-card">
+                               <h3><i class="fas fa-code-branch"></i> Action Nodes</h3>
+                               <p>What the robot is doing</p>
+                               <ul>
+                                   <li>Core robotic functions</li>
+                                   <li>Task execution sequences</li>
+                                   <li>Predefined behaviors</li>
+                               </ul>
+                           </div>
+
+                           <div class="feature-card">
+                               <h3><i class="fas fa-exchange-alt"></i> Context Swaps</h3>
+                               <p>What can go wrong</p>
+                               <ul>
+                                   <li>Environmental changes</li>
+                                   <li>User behavior variations</li>
+                                   <li>System failures</li>
+                               </ul>
+                           </div>
+
+                           <div class="feature-card">
+                               <h3><i class="fas fa-lightbulb"></i> Solutions</h3>
+                               <p>How the robot adapts</p>
+                               <ul>
+                                   <li>Fallback pathways</li>
+                                   <li>Alternative strategies</li>
+                                   <li>Recovery mechanisms</li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   <div>
+                       <!-- Placeholder for image -->
+                       <div class="gallery-item">
+                           <div style="background: linear-gradient(45deg, #74b9ff, #0984e3); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                               <img src='assets/behaviour1.jpg' alt='light scenario'/>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <h3>Bridging Design and Implementation</h3>
+               <p>Our tool maps actions to potential failures and defines adaptive behaviors through a structured framework:</p>
+
+               <div class="workflow-container">
+                   <div class="workflow-step">
+                       <h3><span class="workflow-step-number">1</span> Core Autonomous Functions</h3>
+                       <ul>
+                           <li>User detection and identification</li>
+                           <li>Emotion and vital sign sensing</li>
+                           <li>Affective acknowledgments</li>
+                           <li>Environmental monitoring</li>
+                       </ul>
+                   </div>
+
+                   <div class="workflow-step">
+                       <h3><span class="workflow-step-number">2</span> Context-Specific Scripts</h3>
+                       <ul>
+                           <li>Adaptive dialogue sequences</li>
+                           <li>Situational responses</li>
+                           <li>Personalized interactions</li>
+                           <li>Cultural adaptations</li>
+                       </ul>
+                   </div>
+               </div>
+
+               <div class="diagram-container">
+                   <!-- Placeholder for behavior tree image -->
+                   <div class="gallery-item">
+                       <div style="background: linear-gradient(45deg, #74b9ff, #0984e3); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                           <img src='assets/behaviour2.jpg' alt='light scenario'/>
+                       </div>
+                   </div>
+                   <p class="diagram-caption">Our Behavior Tree framework enables modular prototyping of autonomy with resilient fallback pathways</p>
+               </div>
+
+               <div class="research-foundation">
+                   <h3>Research Foundation</h3>
+                   <p>Our framework draws upon foundational socially assistive robotics research:</p>
+                   <ul>
+                       <li>Scassellati et al. - Adaptive behaviors through affective cues</li>
+                       <li>Colledanchise & Ögren - Behavior Trees for physical agent control</li>
+                       <li>Breazeal - Emotionally engaged robotic systems</li>
+                       <li>Human-robot interaction principles of situated cognition</li>
+                   </ul>
+               </div>
+
+               <h3>Implementation Flexibility</h3>
+               <p>The Behavior Tree framework is designed for real-world deployment:</p>
+
+               <div class="behavior-features">
+                   <div class="feature-card">
+                       <h3><i class="fas fa-microchip"></i> Hardware Compatibility</h3>
+                       <ul>
+                           <li>Runs on lightweight hardware (Raspberry Pi, Arduino)</li>
+                           <li>Resource-efficient design</li>
+                           <li>Scalable for various robot platforms</li>
+                       </ul>
+                   </div>
+
+                   <div class="feature-card">
+                       <h3><i class="fas fa-robot"></i> AI Integration</h3>
+                       <ul>
+                           <li>GPT for generating adaptive logic</li>
+                           <li>Tailored prompts for contextual conversations</li>
+                           <li>Continuous learning capabilities</li>
+                       </ul>
+                   </div>
+
+                   <div class="feature-card">
+                       <h3><i class="fas fa-code"></i> Development Flexibility</h3>
+                       <ul>
+                           <li>Modifiable at any development stage</li>
+                           <li>Implementable in any programming language</li>
+                           <li>Continuous improvement through user research</li>
+                       </ul>
+                   </div>
+               </div>
+
+               <h3>Elderly Care Scenario Demonstration</h3>
+               <p>In a complex elderly care environment, our Behavior Tree framework enabled ROSE to handle diverse challenges:</p>
+
+               <div class="scenario-demo">
+                   <div class="scenario-card">
+                       <div class="scenario-card-header">
+                           <h4><i class="fas fa-user-slash"></i> Challenge: Nonverbal Patients</h4>
+                       </div>
+                       <ul>
+                           <li>Face recognition with voice fallback ("Is that you, Jane?")</li>
+                           <li>Gesture-based communication options</li>
+                           <li>Affective state detection through vital signs</li>
+                       </ul>
+                   </div>
+
+                   <div class="scenario-card">
+                       <div class="scenario-card-header">
+                           <h4><i class="fas fa-wheelchair"></i> Challenge: Atypical Positioning</h4>
+                       </div>
+                       <ul>
+                           <li>Adaptive height adjustment for interaction</li>
+                           <li>Multi-angle perception systems</li>
+                           <li>Customized approach vectors</li>
+                       </ul>
+                   </div>
+
+                   <div class="scenario-card">
+                       <div class="scenario-card-header">
+                           <h4><i class="fas fa-utensils"></i> Challenge: Swallowing Difficulties</h4>
+                       </div>
+                       <ul>
+                           <li>Lubricant/medicated food alternatives</li>
+                           <li>Nurse alerts for discomfort detection</li>
+                           <li>Post-meal comfort protocols</li>
+                       </ul>
+                   </div>
+
+                   <div class="scenario-card">
+                       <div class="scenario-card-header">
+                           <h4><i class="fas fa-tree"></i> Challenge: Outdoor Interactions</h4>
+                       </div>
+                       <ul>
+                           <li>Weather-adaptive behaviors</li>
+                           <li>Sunlight-resistant sensors</li>
+                           <li>Terrain navigation adjustments</li>
+                       </ul>
+                   </div>
+               </div>
+
+               <!-- Placeholder for scenario image -->
+               <div class="gallery-item">
+                   <div style="background: linear-gradient(45deg, #74b9ff, #0984e3); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                       <img src='assets/behaviour3.jpg' alt='light scenario'/>
+                   </div>
+               </div>
+
+               <h3>Key Outcomes</h3>
+               <div class="outcomes-grid">
+                   <div class="outcome-card">
+                       <i class="fas fa-road"></i>
+                       <h4>No Workflow Dead-ends</h4>
+                       <p>Resilient fallbacks ensured continuous operation</p>
+                   </div>
+
+                   <div class="outcome-card">
+                       <i class="fas fa-shield-alt"></i>
+                       <h4>Critical Safety Assurance</h4>
+                       <p>Timely nurse escalations for health concerns</p>
+                   </div>
+
+                   <div class="outcome-card">
+                       <i class="fas fa-heart"></i>
+                       <h4>Emotional Trust Built</h4>
+                       <p>Context-aware empathy in interactions</p>
+                   </div>
+
+                   <div class="outcome-card">
+                       <i class="fas fa-cogs"></i>
+                       <h4>Seamless Integration</h4>
+                       <p>Operational reliability with human-centered care</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
     <footer>
         <div class="container">
